@@ -1,0 +1,275 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+header .logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('photos/24.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay to improve text readability */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+/* Container to center buttons */
+.buttons {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 20px; /* Space between buttons */
+    height: 5vh; /* Full viewport height for vertical centering */
+}
+
+/* Button styles */
+.btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: #007bff; /* Example background color */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Example hover background color */
+}
+
+
+.btn-red {
+    background-color: hwb(9 28% 0%);
+}
+
+.btn-blue {
+    background-color: hwb(204 28% 0%);
+}
+.btn-blue:hover {
+    background-color: hwb(204 24% 16%);
+}
+.btn-gray {
+    background-color: hwb(288 46% 4% / 0.847);
+}
+.btn-gray:hover {
+    background-color: hwb(288 40% 20% / 0.847);
+}
+.btn-yellow {
+    background-color: hwb(325 38% 9%);
+}
+
+.btn-yellow:hover {
+    background-color: hwb(325 34% 25%);
+}
+.btn-green {
+    background-color: hwb(120 20% 20%);
+}
+
+.btn-red:hover {
+    background-color: hwb(8 24% 10%);
+}
+
+.btn-green:hover {
+    background-color: hwb(120 16% 36%);
+}
+
+.about {
+    padding: 50px;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.about .subtitle {
+    font-size: 18px;
+    margin-bottom: 50px;
+    color: #bbb;
+}
+
+.about .content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about .left {
+    flex: 1;
+    font-size: 36px;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.about .right {
+    flex: 2;
+    text-align: left;
+    padding-left: 20px;
+    border-left: 2px solid #444;
+}
+
+.about .features {
+    margin-top: 40px;
+}
+
+.about .feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.about .circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f39c12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.about .feature-description {
+    text-align: left;
+}
+
+.about .feature-description h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.about .feature-description p {
+    font-size: 14px;
+    color: #bbb;
+}
+
+
+/* Footer styling */
+.footer {
+    background-color: #a5a1a1; /* Dark background color */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Container styling */
+.container {
+    width: 80%;
+    margin: 0 auto; /* Center the content */
+}
+
+/* Footer content styling */
+.footer-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Take full height of parent (body) */
+}
+
+/* Example styling for red and green elements */
+.footer-content p {
+    color: #f1eeed; /* Red color */
+}
+
+/* Example styling for red and green elements */
+.footer-content p {
+    color: #f1eeed; /* Red color */
+}
+
+.dropdown{
+    display: inline-block;
+}
+.dropdown button{
+    background-color: rgb(168, 153, 153);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.dropdown .content{
+    display: none;
+    background-color: #a5a1a1;
+    position: absolute;
+    min-width: 100px;
+    box-shadow: #444;
+}
+.dropdown:hover .content{
+    display: block;
+}
+.dropdown:hover button{
+    background-color: #a5a1a1;
+}
+.dropdown a:hover{
+    background-color: #6e6161;
+}

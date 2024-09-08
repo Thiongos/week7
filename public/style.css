@@ -1,0 +1,123 @@
+/* Basic CSS Reset */
+* /* Reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(photos/9.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 1000px 650px;
+}
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Styling for h1 elements */
+.h1 {
+    font-size: 25px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(102, 102, 80);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Section styling with background image */
+section {
+    background-position: center;
+    margin: 20px auto;
+    max-width: 500px;
+    background-color: rgba(180, 201, 192, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for container */
+}
+
+/* Form styling */
+form {
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
+form input[type="submit"] {
+    width: calc(100% - 20px); /* Take full width minus padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Submit button styling */
+form input[type="submit"] {
+    background-color: #228b22; /* Green background color */
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: hwb(120 9% 30%); /* Darker green on hover */
+}
+
+/* Button styling */
+button {
+    margin-left: 25px;
+    padding: 10px 20px;
+    background-color: #ffd700; /* Yellow background color */
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffcc00; /* Darker yellow on hover */
+}
+
+/* Footer styling */
+.footer {
+    background-color: #a5a1a1; /* Dark background color */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Container styling */
+.container {
+    width: 80%;
+    margin: 0 auto; /* Center the content */
+}
+
+/* Footer content styling */
+.footer-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Take full height of parent (body) */
+}
+
+/* Example styling for red and green elements */
+.footer-content p {
+    color: #f1eeed; /* Red color */
+}

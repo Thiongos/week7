@@ -1,0 +1,28 @@
+{
+  "name": "week-7-testing-and-debugging-thiongos",
+  "version": "1.0.0",
+  "description": "In this week, you will delve into backend development using server-side scripting with Node.js and Express.js. You will set up a basic Express.js server and create API endpoints for user authentication, expense management, and expense calculations. This will provide hands-on experience with backend development, API design, and routing using Express.js.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.7.3"
+  }
+}

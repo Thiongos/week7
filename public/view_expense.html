@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Expenses - Expense Tracker Application</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        async function fetchExpenses() {
+            try {
+                const response = await fetch('/api/expenses');
+                const expenses = await response.json();
+                const tableBody = document.querySelector('tbody');
+                tableBody.innerHTML = ''; // Clear existing rows
+                expenses.forEach(expense => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td style="padding: 10px;">${expense.id}</td>
+                        <td style="padding: 10px; white-space: nowrap;">${expense.date}</td>
+                        <td style="padding: 10px;">$${expense.amount.toFixed(2)}</td>
+                        <td style="padding: 10px;">${expense.category}</td>
+                        <td style="padding: 10px;">
+                            <a href="edit_expense.html?id=${expense.id}">Edit</a>
+                            <form action="/delete_expense" method="POST" style="display:inline;">
+                                <input type="hidden" name="id" value="${expense.id}">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching expenses:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchExpenses);
+    </script>
+</head>
+<body>
+    <header class="h1">
+        <h1>View Expenses</h1>
+        <a href="add_expense.html" class="add-expense-link">Add Expense</a>
+    </header>
+    
+    <section>
+        <table border="1" cellspacing="0" cellpadding="10" style="width: 80%; margin: 20px auto; border-collapse: collapse;">
+            <caption style="font-size: 1.5em; margin-bottom: 10px;">Expense Table</caption>
+            <thead>
+                <tr style="background-color: #f0f0f0;">
+                    <th style="padding: 10px; white-space: nowrap;">Expense ID</th>
+                    <th style="padding: 10px;">Date</th>
+                    <th style="padding: 10px;">Amount</th>
+                    <th style="padding: 10px;">Category</th>
+                    <th style="padding: 10px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <button onclick="window.history.back()">Go Back</button>
+    </section>
+    <br><br><br><br><br>
+    <div class="line-break"></div>
+    <footer class="footer">
+        <p>&copy; 2024 Expense Tracker Application. All rights reserved.</p>
+    </footer>
+</body>
+</html>

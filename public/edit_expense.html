@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Expense - Expense Tracker Application</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        async function fetchExpense() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            if (id) {
+                try {
+                    const response = await fetch(`/api/expenses/${id}`);
+                    const expense = await response.json();
+                    if (expense) {
+                        document.getElementById('expense_id').value = expense.id;
+                        document.getElementById('amount').value = expense.amount;
+                        document.getElementById('date').value = expense.date;
+                        document.getElementById('category').value = expense.category;
+                    } else {
+                        document.body.innerHTML = 'Expense not found';
+                    }
+                } catch (error) {
+                    console.error('Error fetching expense:', error);
+                }
+            } else {
+                document.body.innerHTML = 'Invalid request';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchExpense);
+    </script>
+</head>
+<body>
+    <header class="h1">
+        <h1>Edit Expense</h1>
+    </header>
+    
+    <section>
+        <form action="/update_expense" method="POST">
+            <input type="hidden" id="expense_id" name="id">
+            <label for="amount">Amount:</label><br>
+            <input type="number" id="amount" name="amount" step="0.01" required><br><br>
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date" required><br><br>
+            <label for="category">Category:</label><br>
+            <input type="text" id="category" name="category" required><br><br>
+            <input type="submit" value="Update Expense">
+        </form>
+    </section>
+    <section>
+        <button onclick="window.history.back()">Go Back</button>
+    </section>
+    <br><br><br><br><br>
+    <div class="line-break"></div>
+    <footer class="footer">
+        <p>&copy; 2024 Expense Tracker Application. All rights reserved.</p>
+    </footer>
+</body>
+</html>
